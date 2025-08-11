@@ -1,0 +1,32 @@
+{
+    "nombre": "Eldric",
+    "edad": 45,
+    "ciudad": "Rativia",
+    "profesion": "Panadero",
+    "virtudes": ["trabajador", "amable", "disciplinado", "generoso", "resiliente"],
+    "debilidades": ["impulsivo", "desconfiado con extraños", "testarudo"],
+    "inventario": [],
+    "personalidad": {
+      "fuerza": 7,
+      "destreza": 5,
+      "constitucion": 7,
+      "inteligencia": 5,
+      "sabiduria": 4,
+      "carisma": 7,
+      "astucia": 4,
+      "honor": 6
+    },
+    "history": {
+      "eventos": {
+        "gran_inundacion_juvenil": "A los 16 años, una crecida del río Avet inundó parte de Rativia, obligando a su familia a reconstruir el taller de panadería desde cero.",
+        "reforma_horno_comunal": "Participó en la renovación del horno comunal junto a otros artesanos, mejorando su capacidad y eficiencia.",
+        "viaje_branvick": "Viajó a Branvick para aprender nuevas técnicas de pan con maestros panaderos, trayendo consigo recetas únicas.",
+        "escasez_harina": "Durante una mala cosecha, gestionó con éxito el reparto justo de la harina entre los vecinos, evitando disputas.",
+        "incidente_bandidos": "Fue testigo de un asalto de bandidos a un comerciante en las afueras del pueblo, ayudando a ponerlo a salvo.",
+        "feria_primavera": "Cada año organiza un concurso de panes en la feria de primavera, atrayendo a visitantes de aldeas cercanas.",
+        "conflicto_con_recaudador": "Se enfrentó verbalmente a un recaudador de la Confederación por un impuesto injusto, ganándose la admiración de algunos y el recelo de otros."
+      },
+      "resumen": "Panadero veterano de Rativia, conocido por su trato afable y disciplina. Mantiene el horno comunal y participa en la vida de la plaza, entre comerciantes y viajeros bajo la influencia de la Confederación de Eridhan.",
+      "historia_personal": "Eldric creció aprendiendo el oficio en Rativia y heredó un pequeño taller junto al horno comunal. Ha vivido años de abundancia y de escasez y, pese a su carácter a veces impulsivo y desconfiado con extraños, es generoso con los vecinos. Observa con cautela la presión de recaudadores e inspectores, intentando proteger las costumbres del pueblo sin crear conflictos."
+    }
+  }

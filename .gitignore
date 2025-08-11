@@ -1,1 +1,4 @@
 src/utils/keys.py
+
+.venv
+.vscode

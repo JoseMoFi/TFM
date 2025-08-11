@@ -1,6 +1,5 @@
 # Motor gráfico
 arcade==2.6.10
-pyglet<2.0.0
 
 # Lógica BDI
 spade-bdi
@@ -9,5 +8,10 @@ agentspeak
 # Google Generative AI
 google-generativeai
 
-# Utilidades
+# Utilidades numéricas
 numpy
+
+# Testing
+pytest
+# Opcional para ejecutar arcade en modo headless
+pytest-xvfb

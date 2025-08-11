@@ -1,0 +1,46 @@
+{
+  "beliefs": {
+    "at(Location)": "Ubicación actual del agente.",
+    "has(Object, Count)": "Cantidad de un objeto en el inventario (Count > 0).",
+    "object_at(Object, Location)": "Un objeto está en una ubicación concreta. Solo se usa como creencia observable.",
+    "accessible(Location)": "La ubicación es accesible para el agente.",
+    "meet(NPC, Status)": "Nivel de relación o estado con otro NPC.",
+    "hability(Hability, Level)": "Nivel de habilidad del agente en una habilidad concreta."
+  },
+  "functions": {
+    ".accessible(Location)": "Devuelve true si la ubicación es accesible.",
+    ".object_at()": "Devuelve lista de pares (objeto, ubicación) visibles."
+  },
+  "actions": {
+    "move_to": {
+      "description": "Mueve al agente a una ubicación accesible. Actualiza la creencia at(Location).",
+      "plans": [
+        "+!move_to(Site) : accessible(Site) <-\n    .print(\"Moviendo a \", Site);\n    .move(Site);\n    -+at(Site)."
+      ]
+    },
+    "catch_object": {
+      "description": "Coge un objeto si está en la misma ubicación. Actualiza el inventario interno y la creencia has(Object, Count).",
+      "plans": [
+        "+!catch_object(Object) : at(Here) & has(Object, Count) & object_at(Object, Here) <-\n    NewCount = Count + 1;\n    .print(\"Cogiendo \", Object, \" → inventario: \", NewCount);\n    .catch(Object);\n    .update_inventory(Object, 1, \"add\")."
+      ]
+    },
+    "drop_object": {
+      "description": "Suelta un objeto si el agente lo tiene y está en una ubicación válida. Actualiza inventario y creencia.",
+      "plans": [
+        "+!drop_object(Object) : at(Site) & has(Object, Count) <-\n    NewCount = Count - 1;\n    .print(\"Soltando \", Object, \" en \", Site, \" → inventario: \", NewCount);\n    .update_inventory(Object, 1, \"subtract\");\n    .drop(Object, Site)."
+      ]
+    },
+    "search_object": {
+      "description": "Busca la ubicación de un objeto y actualiza la creencia object_at(Object, Location).",
+      "plans": [
+        "+!search_object(Object) : true <-\n    .search(Object)."
+      ]
+    },
+    "update_inventory": {
+      "description": "Actualiza el estado del inventario (add o subtract), y sincroniza la creencia has(Object, Count).",
+      "plans": [
+        "No tiene plan asociado. Es una acción interna para mantener el estado coherente entre el sistema BDI y el inventario Python."
+      ]
+    }
+  }
+}
